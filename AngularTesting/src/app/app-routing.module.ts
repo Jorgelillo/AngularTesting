@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routesMain: Routes = [
-  { path:  '', redirectTo: 'example', pathMatch:  'full' },
+  { path:  '', redirectTo: '/example', pathMatch:  'full' },
  ];
 
 /**
@@ -13,7 +13,9 @@ const routesMain: Routes = [
  * @class AppRoutingModule
  */
 @NgModule({
-  imports: [RouterModule.forRoot(routesMain)],
+  imports: [RouterModule.forRoot(routesMain,
+    // { enableTracing: true }
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

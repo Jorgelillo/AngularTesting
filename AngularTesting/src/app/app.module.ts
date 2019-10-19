@@ -1,22 +1,27 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { ExampleRoutingModule } from './example/example-routing.module';
 import { NgModule } from '@angular/core';
 
+import { ExampleModule } from './example/example.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ExampleComponent01Component } from './example/pages/example-component01/example-component01.component';
-import { ExampleComponent001Component } from './example/components/example-component001/example-component001.component';
-import { Pipe01Pipe } from './example/pipes/pipe01.pipe';
 
+/**
+ * Main Module Class.
+ *
+ * @export
+ * @class AppModule
+ */
 @NgModule({
-  declarations: [
-    AppComponent,
-    ExampleComponent01Component,
-    ExampleComponent001Component,
-    Pipe01Pipe
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // Importing Example module and routes.
+    ExampleModule,
+    ExampleRoutingModule
+  ],
+  declarations: [
+    AppComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
